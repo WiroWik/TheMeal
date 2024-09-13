@@ -13,9 +13,13 @@ struct MealListView: View {
     
     var body: some View {
         List(viewModel.list) { meal in
-            VStack(alignment: .leading) {
-                AsyncImage(url: URL(string: meal.strMealThumb)) // AsyncImage requires iOS 15+
-                    .frame(width: 1, height: 1)
+            HStack(alignment: .center) {
+                AsyncImage(url: URL(string: meal.strMealThumb)) { result in
+                    result.image?
+                        .resizable()
+                        .scaledToFill()
+                }
+                    .frame(width: 75, height: 75)
                 Text(meal.strMeal)
             }
         }
