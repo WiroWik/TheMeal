@@ -12,19 +12,26 @@ struct MealListView: View {
     @ObservedObject var viewModel: MealListViewModel
     
     var body: some View {
-        List(viewModel.list) { meal in
-            HStack(alignment: .center) {
-                AsyncImage(url: URL(string: meal.strMealThumb)) { result in
-                    result.image?
-                        .resizable()
-                        .scaledToFill()
+        Text("😋 MiamMiamTime 😋")
+            .frame(alignment: .center)
+        NavigationView {
+            List(viewModel.list) { meal in
+                NavigationLink(destination: DishView(dish_id: meal.idMeal, viewModel: DishViewModel())) {
+                    HStack(alignment: .center) {
+                        AsyncImage(url: URL(string: meal.strMealThumb)) { result in
+                            result.image?
+                                .resizable()
+                                .scaledToFill()
+                        }
+                            .frame(width: 75, height: 75)
+                        Text(meal.strMeal)
+                    }
                 }
-                    .frame(width: 75, height: 75)
-                Text(meal.strMeal)
             }
-        }
-        .onAppear {
-            viewModel.fetchData(meal_id: "Italian") // Replace with any meal_id you want
+            .navigationTitle("")
+            .onAppear {
+                viewModel.fetchData(meal_area: "French") // Replace with any meal_area you want
+            }
         }
     }
 }
