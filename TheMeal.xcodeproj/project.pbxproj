@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5051D1772C942EC5007206F6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5051D1762C942EC5007206F6 /* Alamofire */; };
+		5051D1792C942FA9007206F6 /* MealListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1782C942FA9007206F6 /* MealListItemModel.swift */; };
+		5051D17B2C942FD7007206F6 /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D17A2C942FD7007206F6 /* MealListView.swift */; };
+		5051D1822C9435A6007206F6 /* MealListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1812C9435A6007206F6 /* MealListViewModel.swift */; };
 		FF41CC022C9424E4001650D8 /* TheMealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF41CC012C9424E4001650D8 /* TheMealApp.swift */; };
 		FF41CC042C9424E4001650D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF41CC032C9424E4001650D8 /* ContentView.swift */; };
 		FF41CC062C9424E5001650D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF41CC052C9424E5001650D8 /* Assets.xcassets */; };
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5051D1782C942FA9007206F6 /* MealListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListItemModel.swift; sourceTree = "<group>"; };
+		5051D17A2C942FD7007206F6 /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
+		5051D1812C9435A6007206F6 /* MealListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewModel.swift; sourceTree = "<group>"; };
 		FF41CBFE2C9424E4001650D8 /* TheMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF41CC012C9424E4001650D8 /* TheMealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealApp.swift; sourceTree = "<group>"; };
 		FF41CC032C9424E4001650D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5051D1772C942EC5007206F6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +79,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5051D17E2C943022007206F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5051D17A2C942FD7007206F6 /* MealListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5051D17F2C94304C007206F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5051D1782C942FA9007206F6 /* MealListItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5051D1802C94305A007206F6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5051D1812C9435A6007206F6 /* MealListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		FF41CBF52C9424E4001650D8 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +128,9 @@
 			children = (
 				FF41CC012C9424E4001650D8 /* TheMealApp.swift */,
 				FF41CC032C9424E4001650D8 /* ContentView.swift */,
+				5051D1802C94305A007206F6 /* ViewModels */,
+				5051D17E2C943022007206F6 /* Views */,
+				5051D17F2C94304C007206F6 /* Models */,
 				FF41CC052C9424E5001650D8 /* Assets.xcassets */,
 				FF41CC072C9424E5001650D8 /* Preview Content */,
 			);
@@ -143,6 +178,9 @@
 			dependencies = (
 			);
 			name = TheMeal;
+			packageProductDependencies = (
+				5051D1762C942EC5007206F6 /* Alamofire */,
+			);
 			productName = TheMeal;
 			productReference = FF41CBFE2C9424E4001650D8 /* TheMeal.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +253,9 @@
 				Base,
 			);
 			mainGroup = FF41CBF52C9424E4001650D8;
+			packageReferences = (
+				5051D1752C942EC5007206F6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = FF41CBFF2C9424E4001650D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF41CC042C9424E4001650D8 /* ContentView.swift in Sources */,
+				5051D1792C942FA9007206F6 /* MealListItemModel.swift in Sources */,
 				FF41CC022C9424E4001650D8 /* TheMealApp.swift in Sources */,
+				5051D17B2C942FD7007206F6 /* MealListView.swift in Sources */,
+				5051D1822C9435A6007206F6 /* MealListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5051D1752C942EC5007206F6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5051D1762C942EC5007206F6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5051D1752C942EC5007206F6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF41CBF62C9424E4001650D8 /* Project object */;
 }
