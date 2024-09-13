@@ -21,6 +21,7 @@ struct DishView: View {
             ScrollView {
                 if let dish = viewModel.dish_info {
                     VStack(alignment: .center) {
+                        // Dish Image
                         AsyncImage(url: URL(string: dish.strMealThumb)) { phase in
                             switch phase {
                             case .success(let image):
@@ -39,23 +40,65 @@ struct DishView: View {
                             }
                         }
                         .frame(width: 150, height: 150)
+                        
+                        // Dish Title
                         Text(dish.strMeal)
                             .bold()
                             .font(.largeTitle)
-                        Text(dish.strArea)
-                        Text("Instructtions").font(.title)
-                        Text(dish.strInstructions)
-                            .fixedSize(horizontal: false, vertical: true)
+                        
+                        Divider()
+                        
+                        // Dish Area and Category
+                        Text("\(dish.strArea) - \(dish.strCategory)")
+                            .foregroundColor(.orange)
+                            .bold()
+                        
+                        // Dish Tags
+                        if let tags = dish.strTags {
+                            Text(tags)
+                                .padding(.top, 5)
+                        }
+                        
+                        Divider()
+                        
+                        // Ingredients and Measures Section
+                        VStack(alignment: .leading) {
+                            Text("Ingredients").font(.title3).bold()
+                            ForEach(0..<viewModel.ingredientList.count, id: \.self) { index in
+                                if index < viewModel.measureList.count {
+                                    Text("\(viewModel.ingredientList[index]) - \(viewModel.measureList[index])")
+                                } else {
+                                    Text(viewModel.ingredientList[index])
+                                }
+                            }
+                        }
+                        .padding(.top)
+                        
+                        Divider()
+                        
+                        // Instructions Section
+                        VStack(alignment: .leading) {
+                            Text("Instructions")
+                                .font(.title3)
+                                .bold()
+                                .italic()
+                                .underline()
+                            Text(dish.strInstructions)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .padding(.top, 5)
+                        }
                     }
+                    .padding()
                 } else if let errorMessage = viewModel.errorMessage {
+                    // Error Handling
                     Text(errorMessage)
                         .foregroundColor(.red)
                 } else {
+                    // Loading Spinner
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
                 }
             }
-            .padding()
             .onAppear {
                 viewModel.fetchData(dish_id: self.dish_id)
             }

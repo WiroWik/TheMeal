@@ -35,8 +35,8 @@ class MealListViewModel: ObservableObject {
     func fetchData(meal_area: String) {
             let url = "https://www.themealdb.com/api/json/v1/1/filter.php?a=\(meal_area)"
             AF.request(url)
-                .validate() // Pour valider les réponses HTTP 200..<300 et les erreurs de contenu
-                .responseDecodable(of: MealDataResponse.self) { response in // Notez le type [User].self ici
+                .validate()
+                .responseDecodable(of: MealDataResponse.self) { response in
                 switch response.result {
                     case .success(let mealResponse):
                         let meals = mealResponse.meals

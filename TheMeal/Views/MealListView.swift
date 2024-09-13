@@ -30,16 +30,8 @@ struct MealListView: View {
             }
             .navigationTitle("")
             .onAppear {
-                viewModel.fetchData(meal_area: "French") // Replace with any meal_area you want
+                viewModel.fetchData(meal_area: "Japanese") // Replace with any meal_area you want
             }
         }
     }
 }
-
-/*
-struct MealListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MealListView(viewModel: <#T##MealListViewModel#>())
-    }
-}
-*/
