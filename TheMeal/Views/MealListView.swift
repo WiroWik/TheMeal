@@ -50,7 +50,7 @@ struct MealListView: View {
                         Text(country).tag(country)
                     }
                 }
-                .pickerStyle(MenuPickerStyle()) // Use a dropdown style
+                .pickerStyle(MenuPickerStyle())
                 .frame(height: 50)
                 
                 List(filteredMeals) { meal in
