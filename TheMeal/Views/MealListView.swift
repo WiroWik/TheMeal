@@ -75,6 +75,7 @@ struct MealListView: View {
             }
             .onChange(of: selectedCountry) { _ in
                 viewModel.list.removeAll()
+                searchText = ""
                 fetchMealsForSelectedCountry()
             }
         }
