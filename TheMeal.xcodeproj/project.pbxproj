@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500CED862CA6E042009616CB /* CocktailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500CED852CA6E042009616CB /* CocktailListView.swift */; };
+		500CED882CA6E0D9009616CB /* CocktailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500CED872CA6E0D9009616CB /* CocktailListViewModel.swift */; };
+		500CED8A2CA6E4C8009616CB /* DrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500CED892CA6E4C8009616CB /* DrinkView.swift */; };
+		500CED8C2CA6E6E4009616CB /* DrinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500CED8B2CA6E6E4009616CB /* DrinkViewModel.swift */; };
 		5051D1772C942EC5007206F6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5051D1762C942EC5007206F6 /* Alamofire */; };
 		5051D1792C942FA9007206F6 /* MealListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1782C942FA9007206F6 /* MealListItemModel.swift */; };
 		5051D17B2C942FD7007206F6 /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D17A2C942FD7007206F6 /* MealListView.swift */; };
@@ -49,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		500CED852CA6E042009616CB /* CocktailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListView.swift; sourceTree = "<group>"; };
+		500CED872CA6E0D9009616CB /* CocktailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListViewModel.swift; sourceTree = "<group>"; };
+		500CED892CA6E4C8009616CB /* DrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkView.swift; sourceTree = "<group>"; };
+		500CED8B2CA6E6E4009616CB /* DrinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewModel.swift; sourceTree = "<group>"; };
 		5051D1782C942FA9007206F6 /* MealListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListItemModel.swift; sourceTree = "<group>"; };
 		5051D17A2C942FD7007206F6 /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
 		5051D1812C9435A6007206F6 /* MealListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewModel.swift; sourceTree = "<group>"; };
@@ -102,6 +110,8 @@
 			children = (
 				5051D17A2C942FD7007206F6 /* MealListView.swift */,
 				5051D1832C945FA6007206F6 /* DishView.swift */,
+				500CED852CA6E042009616CB /* CocktailListView.swift */,
+				500CED892CA6E4C8009616CB /* DrinkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,6 +130,8 @@
 			children = (
 				5051D1812C9435A6007206F6 /* MealListViewModel.swift */,
 				5051D1872C945FC1007206F6 /* DishViewModel.swift */,
+				500CED872CA6E0D9009616CB /* CocktailListViewModel.swift */,
+				500CED8B2CA6E6E4009616CB /* DrinkViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -337,13 +349,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DC18DA2CA6A5A6000BEB55 /* ToDo.txt in Sources */,
+				500CED882CA6E0D9009616CB /* CocktailListViewModel.swift in Sources */,
 				5051D1862C945FB5007206F6 /* DishModel.swift in Sources */,
+				500CED862CA6E042009616CB /* CocktailListView.swift in Sources */,
 				5051D1882C945FC1007206F6 /* DishViewModel.swift in Sources */,
 				FF41CC042C9424E4001650D8 /* ContentView.swift in Sources */,
 				5051D1792C942FA9007206F6 /* MealListItemModel.swift in Sources */,
 				FF41CC022C9424E4001650D8 /* TheMealApp.swift in Sources */,
 				5051D17B2C942FD7007206F6 /* MealListView.swift in Sources */,
+				500CED8A2CA6E4C8009616CB /* DrinkView.swift in Sources */,
 				5051D1822C9435A6007206F6 /* MealListViewModel.swift in Sources */,
+				500CED8C2CA6E6E4009616CB /* DrinkViewModel.swift in Sources */,
 				5051D1842C945FA6007206F6 /* DishView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

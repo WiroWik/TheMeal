@@ -36,7 +36,7 @@ struct MealListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("😋 MiamMiamTime 😋")
+                Text("😋 MealTime 😋")
                     .frame(alignment: .center)
 
                 // Search TextField
