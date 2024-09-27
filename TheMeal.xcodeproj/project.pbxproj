@@ -21,6 +21,7 @@
 		50DC18D42CA69C7C000BEB55 /* DishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1832C945FA6007206F6 /* DishView.swift */; };
 		50DC18D52CA69C7F000BEB55 /* DishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1872C945FC1007206F6 /* DishViewModel.swift */; };
 		50DC18D82CA69CA0000BEB55 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 50DC18D72CA69CA0000BEB55 /* Alamofire */; };
+		50DC18DA2CA6A5A6000BEB55 /* ToDo.txt in Sources */ = {isa = PBXBuildFile; fileRef = 50DC18D92CA6A5A6000BEB55 /* ToDo.txt */; };
 		FF41CC022C9424E4001650D8 /* TheMealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF41CC012C9424E4001650D8 /* TheMealApp.swift */; };
 		FF41CC042C9424E4001650D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF41CC032C9424E4001650D8 /* ContentView.swift */; };
 		FF41CC062C9424E5001650D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF41CC052C9424E5001650D8 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		5051D1832C945FA6007206F6 /* DishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishView.swift; sourceTree = "<group>"; };
 		5051D1852C945FB5007206F6 /* DishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishModel.swift; sourceTree = "<group>"; };
 		5051D1872C945FC1007206F6 /* DishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishViewModel.swift; sourceTree = "<group>"; };
+		50DC18D92CA6A5A6000BEB55 /* ToDo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
 		FF41CBFE2C9424E4001650D8 /* TheMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF41CC012C9424E4001650D8 /* TheMealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMealApp.swift; sourceTree = "<group>"; };
 		FF41CC032C9424E4001650D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				5051D17F2C94304C007206F6 /* Models */,
 				FF41CC052C9424E5001650D8 /* Assets.xcassets */,
 				FF41CC072C9424E5001650D8 /* Preview Content */,
+				50DC18D92CA6A5A6000BEB55 /* ToDo.txt */,
 			);
 			path = TheMeal;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DC18DA2CA6A5A6000BEB55 /* ToDo.txt in Sources */,
 				5051D1862C945FB5007206F6 /* DishModel.swift in Sources */,
 				5051D1882C945FC1007206F6 /* DishViewModel.swift in Sources */,
 				FF41CC042C9424E4001650D8 /* ContentView.swift in Sources */,
