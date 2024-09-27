@@ -8,3 +8,18 @@ Page repas
 Page cocktails
     - Barre de recherche
     - Menu déroulant alcool ou sans alcool
+
+"Beef",
+"Breakfast",
+"Chicken",
+"Dessert",
+"Goat",
+"Lamb",
+"Miscellaneous",
+"Pasta",
+"Pork",
+"Seafood",
+"Side",
+"Starter",
+"Vegan",
+"Vegetarian"
