@@ -63,7 +63,12 @@ struct DishView: View {
                         
                         // Ingredients and Measures Section
                         VStack(alignment: .leading) {
-                            Text("Ingredients").font(.title3).bold()
+                            Text("Ingredients")
+                                .font(.title3)
+                                .bold()
+                                .italic()
+                                .underline()
+                                .padding(.bottom, 5)
                             ForEach(0..<viewModel.ingredientList.count, id: \.self) { index in
                                 if index < viewModel.measureList.count {
                                     Text("\(viewModel.ingredientList[index]) - \(viewModel.measureList[index])")
@@ -72,7 +77,6 @@ struct DishView: View {
                                 }
                             }
                         }
-                        .padding(.top)
                         
                         Divider()
                         

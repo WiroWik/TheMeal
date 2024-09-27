@@ -15,21 +15,22 @@ struct MealListView: View {
 
     // List of countries
     let countries = [
-        "Canada", "Chine", "Croatie", "Egypte", "Espagne", "États-Unis",
-        "France", "Grece", "Irlande", "Inde", "Italie", "Jamaïque",
-        "Japon", "Malaisie", "Maroc", "Mexique", "Pays-Bas",
-        "Philippines", "Pologne", "Portugal", "Royaume Uni", "Russie",
-        "Saint-Christophe-et-Niévès", "Slovaquie", "Thailande",
-        "Tunisie", "Turquie", "Ukraine", "Vietnam"
+        "Canada", "China", "Croatia", "Egypt", "France", "Greece",
+        "India", "Ireland", "Italy", "Jamaica", "Japan", "Malaysia",
+        "Mexico", "Morocco", "Netherlands", "Philippines", "Poland",
+        "Portugal", "Russia", "Saint Kitts and Nevis", "Slovakia",
+        "Spain", "Thailand", "Tunisia", "Turkey", "Ukraine",
+        "United Kingdom", "United States", "Vietnam"
     ]
     
+    // List of nationalities
     let nationalities = [
-        "Canadian", "Chinese", "Croatian", "Egyptian", "Spanish", "American",
-        "French", "Greek", "Irish", "Indian", "Italian", "Jamaican",
-        "Japanese", "Malaysian", "Moroccan", "Mexican", "Dutch",
-        "Filipino", "Polish", "Portuguese", "British", "Russian",
-        "Kenyan", "Slovak", "Thai",
-        "Tunisian", "Turkish", "Ukrainian", "Vietnamese"
+        "Canadian", "Chinese", "Croatian", "Egyptian", "French", "Greek",
+        "Indian", "Irish", "Italian", "Jamaican", "Japanese", "Malaysian",
+        "Mexican", "Moroccan", "Dutch", "Filipino", "Polish",
+        "Portuguese", "Russian", "Saint Kitts and Nevis", "Slovak",
+        "Spanish", "Thai", "Tunisian", "Turkish", "Ukrainian",
+        "British", "American", "Vietnamese"
     ]
 
     var body: some View {
@@ -51,7 +52,6 @@ struct MealListView: View {
                 }
                 .pickerStyle(MenuPickerStyle()) // Use a dropdown style
                 .frame(height: 50)
-                .padding()
                 
                 List(filteredMeals) { meal in
                     NavigationLink(destination: DishView(dish_id: meal.idMeal, viewModel: DishViewModel())) {
@@ -71,6 +71,7 @@ struct MealListView: View {
             }
             .navigationTitle("")
             .onAppear {
+                viewModel.list.removeAll()
                 fetchMealsForSelectedCountry()
             }
             .onChange(of: selectedCountry) { _ in
