@@ -11,45 +11,27 @@ import SwiftUI
 struct MealListView: View {
     @ObservedObject var viewModel: MealListViewModel
     @State private var searchText: String = ""
-    @State private var selectedCountry: String = "Canada"
+    @State private var selectedCountry: String = "France"
 
     // List of countries
     let countries = [
-        "Algérie",
-        "Argentine",
-        "Arabie saoudite",
-        "Canada",
-        "Chine",
-        "Croatie",
-        "Egypte",
-        "Espagne",
-        "France",
-        "Grece",
-        "Irlande",
-        "Inde",
-        "Italie",
-        "Jamaïque",
-        "Japon",
-        "Malaisie",
-        "Maroc",
-        "Mexique",
-        "Norvège",
-        "Pays bas",
-        "Philippines",
-        "Pologne",
-        "Portugal",
-        "Russie",
-        "Saint-Christophe-et-Niévès",
-        "Slovénie",
-        "Syrie",
-        "Thailande",
-        "Tunisie",
-        "Ukraine",
-        "États Unis",
-        "Royaume Uni"
+        "Canada", "Chine", "Croatie", "Egypte", "Espagne", "États-Unis",
+        "France", "Grece", "Irlande", "Inde", "Italie", "Jamaïque",
+        "Japon", "Malaisie", "Maroc", "Mexique", "Pays-Bas",
+        "Philippines", "Pologne", "Portugal", "Royaume Uni", "Russie",
+        "Saint-Christophe-et-Niévès", "Slovaquie", "Thailande",
+        "Tunisie", "Turquie", "Ukraine", "Vietnam"
+    ]
+    
+    let nationalities = [
+        "Canadian", "Chinese", "Croatian", "Egyptian", "Spanish", "American",
+        "French", "Greek", "Irish", "Indian", "Italian", "Jamaican",
+        "Japanese", "Malaysian", "Moroccan", "Mexican", "Dutch",
+        "Filipino", "Polish", "Portuguese", "British", "Russian",
+        "Kenyan", "Slovak", "Thai",
+        "Tunisian", "Turkish", "Ukrainian", "Vietnamese"
     ]
 
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -89,8 +71,18 @@ struct MealListView: View {
             }
             .navigationTitle("")
             .onAppear {
-                viewModel.fetchData(meal_area: "Canadian"/* selectedCountry */) // Replace with any meal_area you want
+                fetchMealsForSelectedCountry()
             }
+            .onChange(of: selectedCountry) { _ in
+                viewModel.list.removeAll()
+                fetchMealsForSelectedCountry()
+            }
+        }
+    }
+
+    private func fetchMealsForSelectedCountry() {
+        if let index = countries.firstIndex(of: selectedCountry) {
+            viewModel.fetchData(meal_area: nationalities[index])
         }
     }
 
