@@ -14,6 +14,13 @@
 		5051D1842C945FA6007206F6 /* DishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1832C945FA6007206F6 /* DishView.swift */; };
 		5051D1862C945FB5007206F6 /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1852C945FB5007206F6 /* DishModel.swift */; };
 		5051D1882C945FC1007206F6 /* DishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1872C945FC1007206F6 /* DishViewModel.swift */; };
+		50875CEA2CA695FE00878B94 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = 50875CE92CA695FE00878B94 /* OHHTTPStubs */; };
+		50875CEC2CA695FE00878B94 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 50875CEB2CA695FE00878B94 /* OHHTTPStubsSwift */; };
+		50DC18D22CA69C68000BEB55 /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D17A2C942FD7007206F6 /* MealListView.swift */; };
+		50DC18D32CA69C6C000BEB55 /* MealListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1812C9435A6007206F6 /* MealListViewModel.swift */; };
+		50DC18D42CA69C7C000BEB55 /* DishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1832C945FA6007206F6 /* DishView.swift */; };
+		50DC18D52CA69C7F000BEB55 /* DishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1872C945FC1007206F6 /* DishViewModel.swift */; };
+		50DC18D82CA69CA0000BEB55 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 50DC18D72CA69CA0000BEB55 /* Alamofire */; };
 		FF41CC022C9424E4001650D8 /* TheMealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF41CC012C9424E4001650D8 /* TheMealApp.swift */; };
 		FF41CC042C9424E4001650D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF41CC032C9424E4001650D8 /* ContentView.swift */; };
 		FF41CC062C9424E5001650D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF41CC052C9424E5001650D8 /* Assets.xcassets */; };
@@ -24,14 +31,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FF41CC0F2C9424E5001650D8 /* PBXContainerItemProxy */ = {
+		50DC18CF2CA69BA9000BEB55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF41CBF62C9424E4001650D8 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FF41CBFD2C9424E4001650D8;
 			remoteInfo = TheMeal;
 		};
-		FF41CC192C9424E5001650D8 /* PBXContainerItemProxy */ = {
+		FF41CC0F2C9424E5001650D8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FF41CBF62C9424E4001650D8 /* Project object */;
 			proxyType = 1;
@@ -72,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50875CEA2CA695FE00878B94 /* OHHTTPStubs in Frameworks */,
+				50875CEC2CA695FE00878B94 /* OHHTTPStubsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DC18D82CA69CA0000BEB55 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +122,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		50DC18D62CA69CA0000BEB55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF41CBF52C9424E4001650D8 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +136,7 @@
 				FF41CC112C9424E5001650D8 /* TheMealTests */,
 				FF41CC1B2C9424E5001650D8 /* TheMealUITests */,
 				FF41CBFF2C9424E4001650D8 /* Products */,
+				50DC18D62CA69CA0000BEB55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +226,10 @@
 				FF41CC102C9424E5001650D8 /* PBXTargetDependency */,
 			);
 			name = TheMealTests;
+			packageProductDependencies = (
+				50875CE92CA695FE00878B94 /* OHHTTPStubs */,
+				50875CEB2CA695FE00878B94 /* OHHTTPStubsSwift */,
+			);
 			productName = TheMealTests;
 			productReference = FF41CC0E2C9424E5001650D8 /* TheMealTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -223,9 +245,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				FF41CC1A2C9424E5001650D8 /* PBXTargetDependency */,
+				50DC18D02CA69BA9000BEB55 /* PBXTargetDependency */,
 			);
 			name = TheMealUITests;
+			packageProductDependencies = (
+				50DC18D72CA69CA0000BEB55 /* Alamofire */,
+			);
 			productName = TheMealUITests;
 			productReference = FF41CC182C9424E5001650D8 /* TheMealUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -264,6 +289,7 @@
 			mainGroup = FF41CBF52C9424E4001650D8;
 			packageReferences = (
 				5051D1752C942EC5007206F6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				50875CE82CA695FE00878B94 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
 			);
 			productRefGroup = FF41CBFF2C9424E4001650D8 /* Products */;
 			projectDirPath = "";
@@ -330,6 +356,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DC18D52CA69C7F000BEB55 /* DishViewModel.swift in Sources */,
+				50DC18D42CA69C7C000BEB55 /* DishView.swift in Sources */,
+				50DC18D32CA69C6C000BEB55 /* MealListViewModel.swift in Sources */,
+				50DC18D22CA69C68000BEB55 /* MealListView.swift in Sources */,
 				FF41CC1D2C9424E5001650D8 /* TheMealUITests.swift in Sources */,
 				FF41CC1F2C9424E5001650D8 /* TheMealUITestsLaunchTests.swift in Sources */,
 			);
@@ -338,15 +368,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		50DC18D02CA69BA9000BEB55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF41CBFD2C9424E4001650D8 /* TheMeal */;
+			targetProxy = 50DC18CF2CA69BA9000BEB55 /* PBXContainerItemProxy */;
+		};
 		FF41CC102C9424E5001650D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FF41CBFD2C9424E4001650D8 /* TheMeal */;
 			targetProxy = FF41CC0F2C9424E5001650D8 /* PBXContainerItemProxy */;
-		};
-		FF41CC1A2C9424E5001650D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FF41CBFD2C9424E4001650D8 /* TheMeal */;
-			targetProxy = FF41CC192C9424E5001650D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -643,10 +673,33 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		50875CE82CA695FE00878B94 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		5051D1762C942EC5007206F6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5051D1752C942EC5007206F6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		50875CE92CA695FE00878B94 /* OHHTTPStubs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50875CE82CA695FE00878B94 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubs;
+		};
+		50875CEB2CA695FE00878B94 /* OHHTTPStubsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50875CE82CA695FE00878B94 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubsSwift;
+		};
+		50DC18D72CA69CA0000BEB55 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5051D1752C942EC5007206F6 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
