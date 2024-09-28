@@ -69,11 +69,11 @@ struct DishView: View {
                                 .italic()
                                 .underline()
                                 .padding(.bottom, 5)
-                            ForEach(0..<viewModel.ingredientList.count, id: \.self) { index in
-                                if index < viewModel.measureList.count {
-                                    Text("\(viewModel.ingredientList[index]) - \(viewModel.measureList[index])")
+                            ForEach(0..<dish.ingredientsList.count, id: \.self) { index in
+                                if index < dish.measuresList.count {
+                                    Text("\(dish.ingredientsList[index]) - \(dish.measuresList[index])")
                                 } else {
-                                    Text(viewModel.ingredientList[index])
+                                    Text(dish.ingredientsList[index])
                                 }
                             }
                         }
