@@ -36,9 +36,6 @@ struct MealListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("😋 MiamMiam Time 😋")
-                    .frame(alignment: .center)
-
                 // Search TextField
                 TextField("Search for a meal...", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())

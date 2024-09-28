@@ -15,23 +15,20 @@ struct CocktailListView: View {
 
     // List of categories
     let categories = [
-        "Cocktail", "Ordinary Drink", "Punch / Party Drink",
-        "Shake", "Other / Unknown", "Cocoa", "Shot",
-        "Coffee / Tea", "Homemade Liqueur", "Beer", "Soft Drink"
+        "Beer", "Cocktail", "Cocoa", "Coffee / Tea", "Homemade Liqueur",
+        "Ordinary Drink", "Other / Unknown", "Punch / Party Drink",
+        "Shake", "Shot", "Soft Drink"
     ]
-    
+
     let requests = [
-        "Cocktail", "Ordinary_Drink", "Punch_/_Party_Drink",
-        "Shake", "Other_/_Unknown", "Cocoa", "Shot",
-        "Coffee_/_Tea", "Homemade_Liqueur", "Beer", "Soft_Drink"
+        "Beer", "Cocktail", "Cocoa", "Coffee_/_Tea", "Homemade_Liqueur",
+        "Ordinary_Drink", "Other_/_Unknown", "Punch_/_Party_Drink",
+        "Shake", "Shot", "Soft_Drink"
     ]
-    
+
     var body: some View {
         NavigationView {
             VStack {
-                Text("🍸 GlouGlou Time 🍸")
-                    .frame(alignment: .center)
-                
                 TextField("Search for a cocktail...", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
