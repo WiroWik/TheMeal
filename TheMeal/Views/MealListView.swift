@@ -11,19 +11,21 @@ import SwiftUI
 struct MealListView: View {
     @ObservedObject var viewModel: MealListViewModel
     @State private var searchText: String = ""
-    @State private var selectedCountry: String = "France"
+    @State private var selectedCountry: String = "French"
 
     // List of countries
+    
     let countries = [
         "Canada", "China", "Croatia", "Egypt", "France", "Greece",
         "India", "Ireland", "Italy", "Jamaica", "Japan", "Malaysia",
         "Mexico", "Morocco", "Netherlands", "Philippines", "Poland",
         "Portugal", "Russia", "Saint Kitts and Nevis", "Slovakia",
-        "Spain", "Thailand", "Tunisia", "Turkey", "Ukraine",
+        "Spain", "Thailand", "Tunaisia", "Turkey", "Ukraine",
         "United Kingdom", "United States", "Vietnam"
     ]
     
     // List of nationalities
+    /*
     let nationalities = [
         "Canadian", "Chinese", "Croatian", "Egyptian", "French", "Greek",
         "Indian", "Irish", "Italian", "Jamaican", "Japanese", "Malaysian",
@@ -32,7 +34,8 @@ struct MealListView: View {
         "Spanish", "Thai", "Tunisian", "Turkish", "Ukrainian",
         "British", "American", "Vietnamese"
     ]
-
+    */
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -43,7 +46,7 @@ struct MealListView: View {
                 
                 // Country Picker
                 Picker("Select a country", selection: $selectedCountry) {
-                    ForEach(countries, id: \.self) { country in
+                    ForEach(viewModel.listArea, id: \.self) { country in
                         Text(country).tag(country)
                     }
                 }
@@ -69,6 +72,7 @@ struct MealListView: View {
             .navigationTitle("")
             .onAppear {
                 viewModel.list.removeAll()
+                viewModel.fetchAreas()
                 fetchMealsForSelectedCountry()
             }
             .onChange(of: selectedCountry) { _ in
@@ -80,8 +84,9 @@ struct MealListView: View {
     }
 
     private func fetchMealsForSelectedCountry() {
+        
         if let index = countries.firstIndex(of: selectedCountry) {
-            viewModel.fetchData(meal_area: nationalities[index])
+            viewModel.fetchData(meal_area: viewModel.listArea[index])
         }
     }
 
