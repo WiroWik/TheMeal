@@ -10,19 +10,6 @@ import SwiftUI
 import SwiftyJSON
 import Alamofire
 
-struct DrinkData {
-    let idDrink: String
-    let strDrink: String
-    let strTags: String?
-    let strCategory: String
-    let strAlcoholic: String
-    let strGlass: String
-    let strInstructions: String
-    let strDrinkThumb: String
-    let ingredientsList: [String]
-    let measuresList: [String]
-}
-
 class DrinkViewModel: ObservableObject {
     @Published var drink_info: DrinkData?
     @Published var errorMessage: String?

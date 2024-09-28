@@ -8,9 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct Dish {
-    let name: String
-    let picture: String
-    let instructions: String
-    let area: String
+struct DishData {
+    let idMeal: String
+    let strMeal: String
+    let strCategory: String
+    let strArea: String
+    let strInstructions: String
+    let strMealThumb: String
+    let strTags: String?
+    let ingredientsList: [String]
+    let measuresList: [String]
 }

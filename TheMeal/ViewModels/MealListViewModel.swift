@@ -9,24 +9,6 @@ import Foundation
 import SwiftUI
 import Alamofire
 
-struct MealData: Decodable {
-    let strMeal: String
-    let strMealThumb: String
-    let idMeal: String
-}
-
-struct MealDataResponse: Decodable {
-    let meals: [MealData]
-}
-
-struct MealDataIdentifiable: Identifiable {
-    let id: Int
-
-    let strMeal: String
-    let strMealThumb: String
-    let idMeal: String
-}
-
 class MealListViewModel: ObservableObject {
     @Published var list: [MealDataIdentifiable] = []
     
@@ -34,6 +16,7 @@ class MealListViewModel: ObservableObject {
     
     func fetchData(meal_area: String) {
         let url = "https://www.themealdb.com/api/json/v1/1/filter.php?a=\(meal_area)"
+
         AF.request(url)
             .validate()
             .responseDecodable(of: MealDataResponse.self) { response in

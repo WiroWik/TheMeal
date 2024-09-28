@@ -9,24 +9,6 @@ import Foundation
 import SwiftUI
 import Alamofire
 
-struct CocktailData: Decodable {
-    let strDrink: String
-    let strDrinkThumb: String
-    let idDrink: String
-}
-
-struct CocktailDataResponse: Decodable {
-    let drinks: [CocktailData]
-}
-
-struct CocktailDataIdentifiable: Identifiable {
-    let id: Int
-
-    let strDrink: String
-    let strDrinkThumb: String
-    let idDrink: String
-}
-
 // ViewModel for Cocktail List
 class CocktailListViewModel: ObservableObject {
     @Published var list: [CocktailDataIdentifiable] = []
@@ -35,6 +17,7 @@ class CocktailListViewModel: ObservableObject {
 
     func fetchData(cocktail_category: String) {
         let url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=\(cocktail_category)"
+
         AF.request(url)
             .validate()
             .responseDecodable(of: CocktailDataResponse.self) { response in

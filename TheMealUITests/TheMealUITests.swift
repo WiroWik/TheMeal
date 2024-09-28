@@ -36,6 +36,32 @@ final class TheMealUITests: XCTestCase {
         let mealRows = mockViewModel.list.count
         XCTAssertEqual(mealRows, sampleMeals.count, "Number of displayed meals should match the sample data")
     }
+    
+    func testCocktailListViewDisplaysDrinks() throws {
+        // Given: A mock ViewModel with sample meal data
+        let sampleCocktails = [
+            CocktailData(strDrink: "Jaeger Bomb", strDrinkThumb: "https://www.example.com/jaeger_bomb.jpg", idDrink: "12345"),
+            CocktailData(strDrink: "Virgin Mojito", strDrinkThumb: "https://www.example.com/virgin_mojito.jpg", idDrink: "67890")
+        ]
+        let mockViewModel = CocktailListViewModel()
+        for (index, cocktail) in sampleCocktails.enumerated() {
+            mockViewModel.list.append(CocktailDataIdentifiable(id: index, strDrink: cocktail.strDrink, strDrinkThumb: cocktail.strDrinkThumb, idDrink: cocktail.idDrink))
+        }
+        
+        // When: Initializing the MealListView with the mock ViewModel
+        let cocktailListView = CocktailListView(viewModel: mockViewModel)
+        
+        // Then: Use a snapshot of the view in the test environment
+        let host = UIHostingController(rootView: cocktailListView)
+        host.loadViewIfNeeded() // Ensures that the view is loaded
+
+        // Assert the view components
+        XCTAssertNotNil(host.view)
+        
+        // Check for the number of rows in the List (you'll need to modify this for the actual content)
+        let cocktailRows = mockViewModel.list.count
+        XCTAssertEqual(cocktailRows, sampleCocktails.count, "Number of displayed cocktails should match the sample data")
+    }
 }
 
 
