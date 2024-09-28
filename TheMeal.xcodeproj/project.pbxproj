@@ -19,6 +19,8 @@
 		5051D1862C945FB5007206F6 /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1852C945FB5007206F6 /* DishModel.swift */; };
 		5051D1882C945FC1007206F6 /* DishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D1872C945FC1007206F6 /* DishViewModel.swift */; };
 		5073DA792CA7D63E006DCF9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5073DA782CA7D63E006DCF9F /* SwiftyJSON */; };
+		5073DA7B2CA7E243006DCF9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5073DA7A2CA7E243006DCF9F /* SwiftyJSON */; };
+		5073DA7D2CA7E24B006DCF9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5073DA7C2CA7E24B006DCF9F /* SwiftyJSON */; };
 		50875CEA2CA695FE00878B94 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = 50875CE92CA695FE00878B94 /* OHHTTPStubs */; };
 		50875CEC2CA695FE00878B94 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 50875CEB2CA695FE00878B94 /* OHHTTPStubsSwift */; };
 		50DC18D22CA69C68000BEB55 /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051D17A2C942FD7007206F6 /* MealListView.swift */; };
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5073DA7D2CA7E24B006DCF9F /* SwiftyJSON in Frameworks */,
 				50875CEA2CA695FE00878B94 /* OHHTTPStubs in Frameworks */,
 				50875CEC2CA695FE00878B94 /* OHHTTPStubsSwift in Frameworks */,
 			);
@@ -100,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5073DA7B2CA7E243006DCF9F /* SwiftyJSON in Frameworks */,
 				50DC18D82CA69CA0000BEB55 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +251,7 @@
 			packageProductDependencies = (
 				50875CE92CA695FE00878B94 /* OHHTTPStubs */,
 				50875CEB2CA695FE00878B94 /* OHHTTPStubsSwift */,
+				5073DA7C2CA7E24B006DCF9F /* SwiftyJSON */,
 			);
 			productName = TheMealTests;
 			productReference = FF41CC0E2C9424E5001650D8 /* TheMealTests.xctest */;
@@ -268,6 +273,7 @@
 			name = TheMealUITests;
 			packageProductDependencies = (
 				50DC18D72CA69CA0000BEB55 /* Alamofire */,
+				5073DA7A2CA7E243006DCF9F /* SwiftyJSON */,
 			);
 			productName = TheMealUITests;
 			productReference = FF41CC182C9424E5001650D8 /* TheMealUITests.xctest */;
@@ -722,6 +728,16 @@
 			productName = Alamofire;
 		};
 		5073DA782CA7D63E006DCF9F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5073DA772CA7D63E006DCF9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		5073DA7A2CA7E243006DCF9F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5073DA772CA7D63E006DCF9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		5073DA7C2CA7E24B006DCF9F /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5073DA772CA7D63E006DCF9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
