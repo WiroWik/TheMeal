@@ -16,7 +16,7 @@ struct CocktailData: Decodable {
 }
 
 struct CocktailDataResponse: Decodable {
-    let cocktails: [CocktailData]
+    let drinks: [CocktailData]
 }
 
 struct CocktailDataIdentifiable: Identifiable {
@@ -33,14 +33,14 @@ class CocktailListViewModel: ObservableObject {
 
     init() {}
 
-    func fetchData(cocktail_category: String = "Cocktail") {
-        let url = "www.thecocktaildb.com/api/json/v1/1/filter.php?c=\(cocktail_category)"
+    func fetchData(cocktail_category: String) {
+        let url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=\(cocktail_category)"
         AF.request(url)
             .validate()
             .responseDecodable(of: CocktailDataResponse.self) { response in
             switch response.result {
             case .success(let cocktailResponse):
-                let cocktails = cocktailResponse.cocktails
+                let cocktails = cocktailResponse.drinks
                 var index: Int = 0
                 for cocktail in cocktails {
                     self.list.append(CocktailDataIdentifiable(id: index, strDrink: cocktail.strDrink, strDrinkThumb: cocktail.strDrinkThumb, idDrink: cocktail.idDrink))
@@ -53,3 +53,4 @@ class CocktailListViewModel: ObservableObject {
         }
     }
 }
+

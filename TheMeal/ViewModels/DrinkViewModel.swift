@@ -6,70 +6,83 @@
 //
 
 import Foundation
-import SwiftUI // Regarder lib SwiftUI Json
+import SwiftUI
+import SwiftyJSON
 import Alamofire
 
-struct DrinkData: Decodable {
+struct DrinkData {
     let idDrink: String
     let strDrink: String
-    let strDrinkAlternate: String?
     let strTags: String?
-    let strVideo: String?
     let strCategory: String
-    let strIBA: String?
     let strAlcoholic: String
     let strGlass: String
     let strInstructions: String
-    let strInstructionsES: String?
-    let strInstructionsDE: String?
-    let strInstructionsFR: String?
-    let strInstructionsIT: String?
-    let strInstructionsZH-HANS: String?
-    let strInstructionsZH-HANT: String?
     let strDrinkThumb: String
-    let strIngredient1: String?
-    let strIngredient2: String?
-    let strIngredient3: String?
-    let strIngredient4: String?
-    let strIngredient5: String?
-    let strIngredient6: String?
-    let strIngredient7: String?
-    let strIngredient8: String?
-    let strIngredient9: String?
-    let strIngredient10: String?
-    let strIngredient11: String?
-    let strIngredient12: String?
-    let strIngredient13: String?
-    let strIngredient14: String?
-    let strIngredient15: String?
-    let strMeasure1: String?
-    let strMeasure2: String?
-    let strMeasure3: String?
-    let strMeasure4: String?
-    let strMeasure5: String?
-    let strMeasure6: String?
-    let strMeasure7: String?
-    let strMeasure8: String?
-    let strMeasure9: String?
-    let strMeasure10: String?
-    let strMeasure11: String?
-    let strMeasure12: String?
-    let strMeasure13: String?
-    let strMeasure14: String?
-    let strMeasure15: String?
-    let strImageSource: String?
-    let strImageAttribution: String?
-    let strCreativeCommonsConfirmed: String?
-    let dateModified: String?
-}
-
-struct DrinkDataResponse: Decodable {
-    let drinks: [DrinkData]
+    let ingredientsList: [String]
+    let measuresList: [String]
 }
 
 class DrinkViewModel: ObservableObject {
     @Published var drink_info: DrinkData?
     @Published var errorMessage: String?
-    var ingredientList: [String] = []
+
+    func fetchData(drink_id: String) {
+        let url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=\(drink_id)"
+
+        AF.request(url)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let data):
+                    let json = JSON(data)
+                    
+                    if let drinks = json["drinks"].array, let firstDrink = drinks.first {
+                        let drink = self.parseDrink(from: firstDrink)
+                        self.drink_info = drink
+                        self.errorMessage = nil
+                    } else {
+                        self.errorMessage = "No drink found"
+                    }
+                    
+                case .failure(let error):
+                    self.errorMessage = "Error: \(error.localizedDescription)"
+                }
+            }
+    }
     
+    private func parseDrink(from json: JSON) -> DrinkData {
+        var tempIngredientsList: [String] = []
+        var tempMeasuresList: [String] = []
+        
+        // Loop through ingredients and measures
+        for i in 1...15 {
+            let ingredient = json["strIngredient\(i)"].stringValue
+            let measure = json["strMeasure\(i)"].stringValue
+            
+            // Only add non-empty ingredients and measures
+            if !ingredient.isEmpty {
+                tempIngredientsList.append(ingredient)
+            }
+            
+            if !measure.isEmpty {
+                tempMeasuresList.append(measure)
+            }
+        }
+        
+        return DrinkData(
+            idDrink: json["idDrink"].stringValue,
+            strDrink: json["strDrink"].stringValue,
+            strTags: json["strTags"].string,
+            strCategory: json["strCategory"].stringValue,
+            strAlcoholic: json["strAlcoholic"].stringValue,
+            strGlass: json["strGlass"].stringValue,
+            strInstructions: json["strInstructions"].stringValue,
+            strDrinkThumb: json["strDrinkThumb"].stringValue,
+            ingredientsList: tempIngredientsList,
+            measuresList: tempMeasuresList
+        )
+    }
+
 }
+
