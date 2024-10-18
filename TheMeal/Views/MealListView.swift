@@ -37,9 +37,31 @@ struct MealListView: View {
         NavigationView {
             VStack {
                 // Search TextField
-                TextField("Search for a meal...", text: $searchText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                HStack {
+                    TextField("Search for a meal...", text: $searchText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(7)
+                        .padding(.horizontal, 25)
+                        .overlay(
+                            HStack {
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(.gray)
+                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 8)
+                                
+                                if !searchText.isEmpty {
+                                    Button(action: {
+                                        self.searchText = ""
+                                    }) {
+                                        Image(systemName: "multiply.circle.fill")
+                                            .foregroundColor(.gray)
+                                            .padding(.trailing, 8)
+                                    }
+                                }
+                            }
+                        )
+                }
+                .padding(.horizontal)
                 
                 // Country Picker
                 Picker("Select a country", selection: $selectedCountry) {
