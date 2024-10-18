@@ -18,9 +18,8 @@ struct MealListView: View {
         "Canada", "China", "Croatia", "Egypt", "France", "Greece",
         "India", "Ireland", "Italy", "Jamaica", "Japan", "Malaysia",
         "Mexico", "Morocco", "Netherlands", "Philippines", "Poland",
-        "Portugal", "Russia", "Saint Kitts and Nevis", "Slovakia",
-        "Spain", "Thailand", "Tunisia", "Turkey", "Ukraine",
-        "United Kingdom", "United States", "Vietnam"
+        "Portugal", "Russia", "Spain", "Thailand", "Tunisia",
+        "Turkey", "Ukraine","United Kingdom", "United States", "Vietnam"
     ]
     
     // List of nationalities
@@ -28,9 +27,8 @@ struct MealListView: View {
         "Canadian", "Chinese", "Croatian", "Egyptian", "French", "Greek",
         "Indian", "Irish", "Italian", "Jamaican", "Japanese", "Malaysian",
         "Mexican", "Moroccan", "Dutch", "Filipino", "Polish",
-        "Portuguese", "Russian", "Saint Kitts and Nevis", "Slovak",
-        "Spanish", "Thai", "Tunisian", "Turkish", "Ukrainian",
-        "British", "American", "Vietnamese"
+        "Portuguese", "Russian", "Spanish", "Thai","Tunisian",
+        "Turkish", "Ukrainian", "British", "American", "Vietnamese"
     ]
 
     var body: some View {
