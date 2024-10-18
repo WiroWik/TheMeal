@@ -8,12 +8,9 @@
 import Foundation
 import SwiftUI
 import Alamofire
-import SwiftyJSON
 
 class MealListViewModel: ObservableObject {
     @Published var list: [MealDataIdentifiable] = []
-    @Published var listArea: [String] = []
-    
     
     init() {}
     
@@ -36,27 +33,5 @@ class MealListViewModel: ObservableObject {
                     print("Erreur : \(error)")
             }
         }
-    }
-    
-    func fetchAreas() {
-        let url = "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
-
-        AF.request(url)
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .success(let data):
-                    let json = JSON(data)
-                    
-                    if let areas = json["meals"].array, let firstArea = areas.first {
-                        self.listArea.append(firstArea["strArea"].stringValue)
-                    }
-                    
-                case .failure(let error):
-                    print("Erreur : \(error)")
-                    
-                }
-            }
-        
     }
 }
