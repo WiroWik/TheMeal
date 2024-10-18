@@ -1,3 +1,0 @@
-- Page favoris
-- Eviter le data en dur dans le code
-- Ajouter des tests Unitaires et UI
